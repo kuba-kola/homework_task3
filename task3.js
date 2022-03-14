@@ -1,7 +1,8 @@
 function makeObjectDeepCopy (obj) {
     const deepClone = {};
+    const isCorrect = typeof obj === 'object' && obj !==null;
 
-    if (typeof obj !== 'object' || obj === null) {
+    if (!isCorrect) {
         return obj;
       }
     
