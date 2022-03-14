@@ -14,9 +14,9 @@ function makeObjectDeepCopy (obj) {
 
 function selectFromInterval(arr, arg1, arg2) {
     const correctArgs = Number.isFinite(arg1) && Number.isFinite(arg2);
-    const correctArr = Array.isArray(arr) && array.every((el) => Number.isFinite(el));
+    const correctArr = Array.isArray(arr) && arr.every((el) => Number.isFinite(el));
     const isCorrect = correctArgs && correctArr;
-    const res = array.filter( (el) => el <= arg1 && el >= arg2 );
+    const res = arr.filter( (el) => el <= arg1 && el >= arg2 );
     
     if (!isCorrect) {
         throw new Error ('Ошибка!');
@@ -30,7 +30,7 @@ const myIterable = {
     to: 4
 };
 
-myIterable[Symbol.iterator] = function*() {
+myIterable[Symbol.iterator] = function() {
     const correctArgs = Number.isFinite(this.from) && Number.isFinite(this.to);
     const isCorrect = correctArgs && this.to > this.from;
 
