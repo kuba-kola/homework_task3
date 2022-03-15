@@ -4,9 +4,9 @@ function makeObjectDeepCopy (obj) {
 
     if (!isCorrect) {
         return obj;
-      }
+    }
     
-    for (key in obj) {
+    for (let key in obj) {
         deepClone[key] = makeObjectDeepCopy(obj[key]);
     }
 
